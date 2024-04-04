@@ -1,0 +1,40 @@
+.heading-nav {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-size: 48px;
+  margin-top: 20px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  padding-left: 20px;
+}
+
+.nav-link:hover {
+  color: #ffb84c;
+}
+
+@media screen and (max-width: 639px) {
+  .nav {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
