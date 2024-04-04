@@ -1,5 +1,13 @@
+import Home from "./pages/home/home";
+
 function App() {
-  return <h1>Agastya Portfolio website</h1>;
+  return (
+    <div>
+      <section className="home">
+        <Home />
+      </section>
+    </div>
+  );
 }
 
 export default App;
