@@ -10,11 +10,11 @@ const Nav = () => {
         ar
       </a>
       <div>
-        <a href="mailto:agastyarajawat909@gmail.com" className="nav-link">
-          Email
-        </a>
         <a href="/projects" className="nav-link">
           My Works
+        </a>
+        <a href="/contact" className="nav-link">
+          Get in touch
         </a>
       </div>
     </div>
