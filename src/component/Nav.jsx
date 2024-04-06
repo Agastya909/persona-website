@@ -13,8 +13,11 @@ const Nav = () => {
         <a href="/projects" className="nav-link">
           My Works
         </a>
+        <a href="/skills" className="nav-link">
+          Skills
+        </a>
         <a href="/contact" className="nav-link">
-          Get in touch
+          Connect
         </a>
       </div>
     </div>

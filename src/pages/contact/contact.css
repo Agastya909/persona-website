@@ -5,13 +5,20 @@
   justify-content: space-around;
 }
 
-.title {
-  font-size: 20px;
-  margin: 0 20px;
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.title:hover {
-  color: #ffb84c;
+.icon {
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+}
+
+.icon:hover {
+  fill: #ffb84c;
 }
 
 @media screen and (max-width: 480px) {
@@ -21,7 +28,9 @@
     flex-direction: column;
     align-items: center;
   }
-  .title {
-    margin-top: 5px;
+  .icon {
+    margin-top: 20px;
+    height: 40px;
+    width: 40px;
   }
 }

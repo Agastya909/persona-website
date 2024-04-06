@@ -1,0 +1,45 @@
+.skill-content {
+  margin-top: 100px;
+}
+
+.section {
+  margin: 20px 0;
+}
+
+.title {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 22px;
+  margin: 5px 0;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.item {
+  font-size: 16px;
+  color: #aaaaaa;
+  padding-right: 20px;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 639px) {
+  .skill-content {
+    max-width: 480px;
+    margin: 50px 10px;
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 18px;
+  }
+  .item {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
