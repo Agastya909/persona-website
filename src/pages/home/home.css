@@ -8,8 +8,35 @@
   color: #ffb84c;
 }
 
-.intro-main-home {
+.home-heading {
   margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.home-name {
+  animation: changeNameColor 10s infinite;
+}
+
+@keyframes changeNameColor {
+  0% {
+    color: #fff;
+  }
+  25% {
+    color: #2b59c3;
+  }
+  50% {
+    color: #ffb84c;
+  }
+  75% {
+    color: #ac87c5;
+  }
+  100% {
+    color: #9bcf53;
+  }
+}
+
+.intro-main-home {
   font-size: 36px;
 }
 

@@ -30,7 +30,10 @@ const Home = () => {
     <div className="main-home">
       <Nav />
       <div>
-        <p className="intro-main-home">{"Hi, I'm Agastya Rajawat"}</p>
+        <div className="home-heading">
+          <p className="intro-main-home">{"Hi I'm"} </p>
+          <p className="intro-main-home home-name">&nbsp;Agastya Rajawat</p>
+        </div>
         <p className="intro-sub-home">
           {"Web & Android Developer from India."}
         </p>
