@@ -20,7 +20,40 @@
 
 .intro-desc-home {
   color: #aaaaaa;
-  margin-top: 20px;
+  margin: 20px 0;
+}
+
+.btn-group {
+  margin-top: 5px;
+}
+
+.social-btn {
+  background-color: #212121;
+  border-radius: 50px;
+  border-width: 0;
+  padding: 5px 15px;
+  margin-right: 10px;
+  color: #fff;
+  font-weight: 600;
+}
+
+
+.social-btn:hover {
+  background-color: #2b59c3;
+  cursor: pointer;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  fill: #fff;
+  height: 15px;
+  width: 15px;
+  padding: 5px;
+  margin-right: 8px;
 }
 
 @media screen and (max-width: 639px) {
@@ -43,5 +76,14 @@
 
   .intro-desc-home {
     margin-top: 20px;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .social-btn {
+    margin-top: 10px;
   }
 }

@@ -16,9 +16,6 @@ const Nav = () => {
         <a href="/skills" className="nav-link">
           Skills
         </a>
-        <a href="/contact" className="nav-link">
-          Connect
-        </a>
       </div>
     </div>
   );
