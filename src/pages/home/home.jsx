@@ -30,15 +30,11 @@ const Home = () => {
     <div className="main-home">
       <Nav />
       <div>
-        <div className="home-heading">
-          <p className="intro-main-home">{"Hi I'm"} </p>
-          <p className="intro-main-home home-name">&nbsp;Agastya Rajawat</p>
-        </div>
-        <p className="intro-sub-home">
-          {"Web & Android Developer from India."}
-        </p>
+        <p className="intro-main-home">{"Hi I'm Agastya Rajawat"} </p>
+        <p className="intro-sub-home home-name">{"Web & Android Developer."}</p>
         <p className="intro-desc-home">
-          I have over an year of experience working with web and android.
+          I have over an year of experience working with React, React Native and
+          NodeJS.
         </p>
         <div className="btn-group">
           <button

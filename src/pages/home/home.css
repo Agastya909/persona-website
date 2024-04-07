@@ -8,12 +8,6 @@
   color: #ffb84c;
 }
 
-.home-heading {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: row;
-}
-
 .home-name {
   animation: changeNameColor 10s infinite;
 }
@@ -37,7 +31,8 @@
 }
 
 .intro-main-home {
-  font-size: 36px;
+  margin-top: 100px;
+  font-size: 32px;
 }
 
 .intro-sub-home {
@@ -47,7 +42,7 @@
 
 .intro-desc-home {
   color: #aaaaaa;
-  margin: 20px 0;
+  margin: 0 0 10px 0;
 }
 
 .btn-group {
