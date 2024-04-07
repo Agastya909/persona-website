@@ -1,6 +1,30 @@
 import Nav from "../../component/Nav";
 import "./home.css";
 
+const TIMELINE_DATA = [
+  {
+    id: 0,
+    title: "Software Engineer",
+    desc: "PickMyWork",
+    start_date: "Feb. 2023",
+    end_date: "Present",
+  },
+  {
+    id: 1,
+    title: "Software Engineer Intern",
+    desc: "PickMyWork",
+    start_date: "July 2022",
+    end_date: "October 2022",
+  },
+  {
+    id: 2,
+    title: "Bachelor of Technology",
+    desc: "Computer Engineering",
+    start_date: "July 2019",
+    end_date: "July 2023",
+  },
+];
+
 const Home = () => {
   return (
     <div className="main-home">
@@ -13,7 +37,6 @@ const Home = () => {
         <p className="intro-desc-home">
           I have over an year of experience working with web and android.
         </p>
-        <hr style={{ marginBottom: 20 }} />
         <div className="btn-group">
           <button
             className="social-btn"
@@ -87,6 +110,27 @@ const Home = () => {
               <p className="btn-title">Email</p>
             </div>
           </button>
+        </div>
+        <p style={{ marginTop: 20, marginBottom: 20, fontSize: 24 }}>
+          Education & Work History
+        </p>
+        <div className="timeline">
+          {TIMELINE_DATA.map((item, index) => {
+            return (
+              <div key={index} className="timeline-card">
+                <div className="dot" />
+                <div className="timeline-data">
+                  <div className="timeline-data-child">
+                    <p className="timeline-title">{item.title}</p>
+                    <p className="timeline-desc">{item.desc}</p>
+                  </div>
+                  <p className="timeline-dates">
+                    {item.start_date} - {item.end_date}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
       <div style={{ marginTop: 200 }}>

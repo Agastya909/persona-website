@@ -37,7 +37,6 @@
   font-weight: 600;
 }
 
-
 .social-btn:hover {
   background-color: #2b59c3;
   cursor: pointer;
@@ -56,7 +55,62 @@
   margin-right: 8px;
 }
 
-@media screen and (max-width: 639px) {
+.dot {
+  transform: translateX(-8px);
+  height: 16px;
+  width: 16px;
+  border-radius: 16px;
+  background-color: #aaa;
+}
+
+.timeline-card {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  border-left: 1px solid #aaa;
+}
+.timeline-data {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.timeline-title {
+  color: #aaa;
+  font-size: 20px;
+}
+
+.timeline-dates,
+.timeline-desc {
+  color: #aaa;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.timeline-card:hover {
+  border-left: 1px double #fff;
+}
+
+.timeline-card:hover > .timeline-data {
+  backdrop-filter: blur(2px);
+  background-color: #41414120;
+  border-radius: 20px;
+}
+
+.timeline-card:hover > .timeline-data > .timeline-data-child > .timeline-desc,
+.timeline-card:hover > .timeline-data > .timeline-data-child > .timeline-title,
+.timeline-card:hover > .timeline-data > .timeline-dates {
+  color: #fff;
+}
+
+.timeline-card:hover > .dot {
+  background-color: #fff;
+}
+
+@media screen and (max-width: 645px) {
   .main-home {
     max-width: 480px;
     margin: 10px;
@@ -85,5 +139,22 @@
   }
   .social-btn {
     margin-top: 10px;
+  }
+
+  .timeline {
+    margin-left: 5px;
+  }
+
+  .timeline-data {
+    padding: 20px 10px;
+  }
+
+  .timeline-title {
+    font-size: 16px;
+  }
+
+  .timeline-desc,
+  .timeline-dates {
+    font-size: 12px;
   }
 }
