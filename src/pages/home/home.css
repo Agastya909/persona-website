@@ -2,10 +2,53 @@
   max-width: 640px;
   margin: 0 auto;
   color: #fff;
+  animation: opacityTransition 1s ease-in;
+}
+
+@keyframes opacityTransition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .nav-link:hover {
   color: #ffb84c;
+}
+
+.splash {
+  position: relative;
+  background-color: #414141;
+  height: 10px;
+  border-radius: 10px;
+  margin: 45vh 50px;
+}
+
+.splash::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  animation: changeLoadingColor 2.5s infinite linear;
+  border-radius: 10px;
+}
+
+@keyframes changeLoadingColor {
+  0% {
+    width: 0%;
+    background-color: #2b59c3;
+  }
+  50% {
+    width: 50%;
+    background-color: #ffb84c;
+  }
+  100% {
+    width: 100%;
+    background-color: #9bcf53;
+  }
 }
 
 .home-name {
@@ -178,5 +221,9 @@
   .timeline-desc,
   .timeline-dates {
     font-size: 12px;
+  }
+
+  .splash {
+    margin: 45vh 15px;
   }
 }

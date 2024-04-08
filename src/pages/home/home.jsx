@@ -1,5 +1,7 @@
+import { useState } from "react";
 import Nav from "../../component/Nav";
 import "./home.css";
+import { useEffect } from "react";
 
 const TIMELINE_DATA = [
   {
@@ -26,7 +28,16 @@ const TIMELINE_DATA = [
 ];
 
 const Home = () => {
-  return (
+  const [isSplash, setSplash] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setSplash(false);
+    }, 2500);
+  }, []);
+
+  return isSplash ? (
+    <div className="splash" />
+  ) : (
     <div className="main-home">
       <Nav />
       <div>
