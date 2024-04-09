@@ -8,6 +8,7 @@ body {
   background-image: url(../public/pattern-randomized.svg);
   background-size: cover;
   background-repeat: repeat;
+  overflow-y: hidden;
 }
 
 p,
