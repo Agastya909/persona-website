@@ -31,7 +31,11 @@ const Home = () => {
       <Nav />
       <div>
         <p className="intro-main-home">{"Hi I'm Agastya Rajawat"} </p>
-        <p className="intro-sub-home home-name">{"Web & Android Developer."}</p>
+        <div className="intro-sub-home home-name">
+          <p className="intro-sub-home-child">
+            {"Web & Android Developer."}
+          </p>
+        </div>
         <p className="intro-desc-home">
           I have over an year of experience working with React, React Native and
           NodeJS.

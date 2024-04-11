@@ -10,7 +10,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  animation: nav 0.5s linear;
+  animation: nav 0.5s cubic-bezier(0.95, 0.05, 0.795, 0.035);
 }
 
 @keyframes nav {

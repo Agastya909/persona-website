@@ -2,7 +2,6 @@
   max-width: 640px;
   margin: 0 auto;
   color: #fff;
-  animation: translateYAnim 0.5s linear;
 }
 
 .nav-link:hover {
@@ -10,7 +9,28 @@
 }
 
 .home-name {
-  animation: changeNameColor 10s infinite;
+  position: relative;
+  animation: changeNameColor 10s infinite alternate;
+}
+
+.intro-sub-home-child::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  height: 24px;
+  width: 64px;
+  border-radius: 2px;
+  border-bottom: solid 4px;
+  animation: oscillateUnderline 2s infinite ease-in-out alternate;
+}
+
+@keyframes oscillateUnderline {
+  from {
+    left: 0;
+  }
+  to {
+    left: 85%;
+  }
 }
 
 @keyframes changeNameColor {
@@ -28,17 +48,6 @@
   }
   100% {
     color: #9bcf53;
-  }
-}
-
-@keyframes translateYAnim {
-  0% {
-    opacity: 0;
-    transform: translateY(75px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -150,6 +159,14 @@
     margin: 10px;
     color: #fff;
   }
+
+  .intro-sub-home-child::before {
+    content: "";
+    position: absolute;
+    top: 90px;
+    height: 24px;
+    width: 56px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -192,7 +209,21 @@
     font-size: 12px;
   }
 
-  .splash {
-    margin: 45vh 15px;
+  .intro-sub-home-child::before {
+    content: "";
+    position: absolute;
+    top: 80px;
+    height: 24px;
+    width: 36px;
+  }
+}
+
+@media screen and (max-width: 292px) {
+  .intro-sub-home-child::before {
+    content: "";
+    position: absolute;
+    top: 140px;
+    height: 24px;
+    width: 24px;
   }
 }
