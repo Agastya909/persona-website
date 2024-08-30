@@ -6,7 +6,7 @@ const TIMELINE_DATA = [
     id: 0,
     title: "Product Engineer",
     desc: "Shurutech",
-    start_date: "June 2023",
+    start_date: "June 2024",
     end_date: "Present",
   },
   {
@@ -14,7 +14,7 @@ const TIMELINE_DATA = [
     title: "Software Engineer",
     desc: "PickMyWork",
     start_date: "Feb. 2023",
-    end_date: "May 2023",
+    end_date: "May 2024",
   },
   {
     id: 2,
