@@ -4,20 +4,27 @@ import "./home.css";
 const TIMELINE_DATA = [
   {
     id: 0,
-    title: "Software Engineer",
-    desc: "PickMyWork",
-    start_date: "Feb. 2023",
+    title: "Product Engineer",
+    desc: "Shurutech",
+    start_date: "June 2023",
     end_date: "Present",
   },
   {
     id: 1,
+    title: "Software Engineer",
+    desc: "PickMyWork",
+    start_date: "Feb. 2023",
+    end_date: "May 2023",
+  },
+  {
+    id: 2,
     title: "Software Engineer Intern",
     desc: "PickMyWork",
     start_date: "July 2022",
     end_date: "October 2022",
   },
   {
-    id: 2,
+    id: 3,
     title: "Bachelor of Technology",
     desc: "Computer Engineering",
     start_date: "July 2019",
@@ -37,8 +44,7 @@ const Home = () => {
           </p>
         </div>
         <p className="intro-desc-home">
-          I have over an year of experience working with React, React Native and
-          NodeJS.
+          I have over an year of experience working with Javascript, typescript and python, building webservers, mobile application and websites.
         </p>
         <div className="btn-group">
           <button
