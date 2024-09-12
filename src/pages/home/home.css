@@ -8,29 +8,14 @@
   color: #ffb84c;
 }
 
+.hi {
+  margin-top: 35px;
+  color: #aaaaaa;
+}
+
 .home-name {
   position: relative;
   animation: changeNameColor 10s infinite alternate;
-}
-
-.intro-sub-home-child::before {
-  content: "";
-  position: absolute;
-  top: 30px;
-  height: 24px;
-  width: 64px;
-  border-radius: 2px;
-  border-bottom: solid 4px;
-  animation: oscillateUnderline 2s infinite ease-in-out alternate;
-}
-
-@keyframes oscillateUnderline {
-  from {
-    left: 0;
-  }
-  to {
-    left: 85%;
-  }
 }
 
 @keyframes changeNameColor {
@@ -52,7 +37,6 @@
 }
 
 .intro-main-home {
-  margin-top: 100px;
   font-size: 32px;
 }
 
@@ -103,7 +87,7 @@
   height: 16px;
   width: 16px;
   border-radius: 16px;
-  background-color: #aaa;
+  background-color: #fff;
 }
 
 .timeline-card {
@@ -159,19 +143,14 @@
     margin: 10px;
     color: #fff;
   }
-
-  .intro-sub-home-child::before {
-    content: "";
-    position: absolute;
-    top: 90px;
-    height: 24px;
-    width: 56px;
-  }
 }
 
 @media screen and (max-width: 480px) {
-  .intro-main-home {
+  .hi {
     margin-top: 50px;
+  }
+
+  .intro-main-home {
     font-size: 30px;
   }
 

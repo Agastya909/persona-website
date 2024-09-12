@@ -1,6 +1,6 @@
 import Nav from "../../component/Nav";
 import "./home.css";
-
+import { useState, useEffect } from "react";
 const TIMELINE_DATA = [
   {
     id: 0,
@@ -31,20 +31,46 @@ const TIMELINE_DATA = [
     end_date: "July 2023",
   },
 ];
+const words = ["Backend Developer", "Mobile Developer", "Frontend Developer"];
 
 const Home = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [deleting, setDeleting] = useState(false);
+  const [speed] = useState(100);
+
+  useEffect(() => {
+    const currentWord = words[currentWordIndex];
+    if (!deleting && displayedText === currentWord) {
+      setTimeout(() => setDeleting(true), 1000);
+    } else if (deleting && displayedText === "") {
+      setDeleting(false);
+      setCurrentWordIndex((prev) => (prev + 1) % words.length);
+    }
+    const timeout = setTimeout(() => {
+      if (!deleting) {
+        setDisplayedText(currentWord.slice(0, displayedText.length + 1));
+      } else {
+        setDisplayedText(currentWord.slice(0, displayedText.length - 1));
+      }
+    }, speed);
+    return () => clearTimeout(timeout);
+  }, [displayedText, deleting, currentWordIndex, speed]);
+
   return (
     <div className="main-home">
       <Nav />
       <div>
-        <p className="intro-main-home">{"Hi I'm Agastya Rajawat"} </p>
+        <p className="hi">{"Hi, My name is"}</p>
+        <p className="intro-main-home">{"Agastya Rajawat"} </p>
         <div className="intro-sub-home home-name">
-          <p className="intro-sub-home-child">
-            {"Web & Android Developer."}
-          </p>
+          <span className="intro-sub-home-child">{displayedText}</span>
+          <span className="cursor">|</span>
         </div>
         <p className="intro-desc-home">
-          I have over an year of experience working with Javascript, typescript and python, building webservers, mobile application and websites.
+          I have over a year of experience working with JavaScript, TypeScript,
+          and Python, specializing in building web servers, developing mobile
+          applications using React Native, and creating responsive websites.
         </p>
         <div className="btn-group">
           <button
@@ -142,14 +168,7 @@ const Home = () => {
           })}
         </div>
       </div>
-      <div style={{ marginTop: 200 }}>
-        <a
-          href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/"
-          style={{ textDecoration: "none", color: "#343434" }}
-        >
-          SVG Background by SVGBackgrounds.com
-        </a>
-      </div>
+      <div style={{ margin: "50px" }} />
     </div>
   );
 };
