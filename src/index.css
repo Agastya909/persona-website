@@ -1,13 +1,10 @@
 body {
   max-width: 640px;
   margin: 0 auto;
-  background-color: #121212;
+  background-color: #090909;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
-  background-image: url(../public/pattern-randomized.svg);
-  background-size: cover;
-  background-repeat: repeat;
 }
 
 p,

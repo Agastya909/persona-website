@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/home/home.jsx";
 import Project from "./pages/project/Project.jsx";
 import Skills from "./pages/skills/Skills.jsx";
+import Blogs from "./pages/blogs/Blogs.jsx";
+import Waves from "./component/Waves.jsx";
 
 const Router = createBrowserRouter([
   {
@@ -19,10 +21,15 @@ const Router = createBrowserRouter([
     path: "/skills",
     element: <Skills />,
   },
+  {
+    path: "/blogs",
+    element: <Blogs />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Waves />
     <RouterProvider router={Router} />
   </React.StrictMode>
 );

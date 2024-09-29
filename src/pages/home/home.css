@@ -4,10 +4,6 @@
   color: #fff;
 }
 
-.nav-link:hover {
-  color: #ffb84c;
-}
-
 .hi {
   margin-top: 35px;
   color: #aaaaaa;
@@ -23,31 +19,32 @@
     color: #fff;
   }
   25% {
-    color: #2b59c3;
+    color: #47a8bd;
   }
   50% {
-    color: #ffb84c;
+    color: #ffad69;
   }
   75% {
-    color: #ac87c5;
+    color: #ee4266;
   }
   100% {
-    color: #9bcf53;
+    color: #5dfdcb;
   }
 }
 
 .intro-main-home {
-  font-size: 32px;
-}
-
-.intro-sub-home {
-  color: #aaaaaa;
   font-size: 40px;
 }
 
+.intro-sub-home {
+  /* color: #aaaaaa; */
+  font-size: 32px;
+}
+
 .intro-desc-home {
-  color: #aaaaaa;
+  color: #ddd;
   margin: 0 0 10px 0;
+  font-weight: 300;
 }
 
 .btn-group {
@@ -65,8 +62,12 @@
 }
 
 .social-btn:hover {
-  background-color: #2b59c3;
+  background-color: #efebce;
   cursor: pointer;
+  color: #212121;
+  .icon {
+    fill: #212121;
+  }
 }
 
 .btn-group {
@@ -82,59 +83,76 @@
   margin-right: 8px;
 }
 
-.dot {
-  transform: translateX(-8px);
-  height: 16px;
-  width: 16px;
-  border-radius: 16px;
-  background-color: #fff;
-}
-
 .timeline-card {
   display: flex;
-  width: 100%;
   flex-direction: row;
-  align-items: center;
-  border-left: 1px solid #aaa;
-}
-.timeline-data {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
-.timeline-title {
-  color: #aaa;
-  font-size: 20px;
-}
-
-.timeline-dates,
-.timeline-desc {
-  color: #aaa;
-  font-size: 14px;
-  font-style: italic;
+  padding: 15px 25px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 .timeline-card:hover {
-  border-left: 1px double #fff;
+  box-shadow: 0 0 1px 0 #ffffff4d;
+  background-color: #2222224d;
+  backdrop-filter: blur(15px);
 }
 
-.timeline-card:hover > .timeline-data {
-  backdrop-filter: blur(2px);
-  background-color: #41414120;
-  border-radius: 20px;
+.dates,
+.job-profile,
+.company {
+  font-weight: 300;
 }
 
-.timeline-card:hover > .timeline-data > .timeline-data-child > .timeline-desc,
-.timeline-card:hover > .timeline-data > .timeline-data-child > .timeline-title,
-.timeline-card:hover > .timeline-data > .timeline-dates {
+.dates-div {
+  display: flex;
+  flex-direction: row;
+  flex: 2;
+}
+
+.dates {
+  font-size: 14px;
+  color: #ababab;
+}
+
+.work-data-div {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+}
+
+.job-profile {
+  font-size: 20px;
+}
+
+.company {
+  display: flex;
+  flex-direction: row;
+  margin: 5px 0;
+}
+
+.company > a {
+  color: #ababab;
+  text-decoration: none;
+  font-style: italic;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.stack-item {
+  background-color: #212121;
+  border-radius: 50px;
+  padding: 5px 15px;
+  margin-right: 8px;
   color: #fff;
-}
-
-.timeline-card:hover > .dot {
-  background-color: #fff;
+  font-weight: 100;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 645px) {
@@ -142,6 +160,13 @@
     max-width: 480px;
     margin: 10px;
     color: #fff;
+  }
+  .timeline-card {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
   }
 }
 
@@ -169,23 +194,6 @@
   }
   .social-btn {
     margin-top: 10px;
-  }
-
-  .timeline {
-    margin-left: 5px;
-  }
-
-  .timeline-data {
-    padding: 20px 10px;
-  }
-
-  .timeline-title {
-    font-size: 16px;
-  }
-
-  .timeline-desc,
-  .timeline-dates {
-    font-size: 12px;
   }
 
   .intro-sub-home-child::before {

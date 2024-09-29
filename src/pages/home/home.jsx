@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import Link from "../../component/Link";
 import Nav from "../../component/Nav";
 import "./home.css";
 import { useState, useEffect } from "react";
@@ -5,33 +7,69 @@ const TIMELINE_DATA = [
   {
     id: 0,
     title: "Product Engineer",
-    desc: "Shurutech",
-    start_date: "June 2024",
+    company: "Shurutech",
+    start_date: "JUNE 2024",
     end_date: "Present",
+    link: "https://shurutech.com/",
+    stack: ["Python", "Django", "Postgres", "AWS"],
   },
   {
     id: 1,
     title: "Software Engineer",
-    desc: "PickMyWork",
-    start_date: "Feb. 2023",
-    end_date: "May 2024",
+    company: "PickMyWork",
+    start_date: "FEB 2023",
+    end_date: "MAY 2024",
+    link: "https://www.pickmywork.com/",
+    stack: ["React Native", "ReactJS", "Node.js", "MySQL", "AWS"],
   },
   {
     id: 2,
     title: "Software Engineer Intern",
-    desc: "PickMyWork",
-    start_date: "July 2022",
-    end_date: "October 2022",
-  },
-  {
-    id: 3,
-    title: "Bachelor of Technology",
-    desc: "Computer Engineering",
-    start_date: "July 2019",
-    end_date: "July 2023",
+    company: "PickMyWork",
+    start_date: "JULY 2022",
+    end_date: "OCT 2022",
+    link: "https://www.pickmywork.com/",
+    stack: ["React Native", "ReactJS", "Node.js", "MySQL", "AWS"],
   },
 ];
 const words = ["Backend Developer", "Mobile Developer", "Frontend Developer"];
+
+const TimelineCard = ({
+  title,
+  company,
+  start_date,
+  end_date,
+  link,
+  stack,
+}) => {
+  return (
+    <div className="timeline-card">
+      <div className="dates-div">
+        <p className="dates">
+          {start_date} — {end_date}
+        </p>
+      </div>
+      <div className="work-data-div">
+        <div className="job-profile">{title}</div>
+        <div className="company">
+          <a href={link} target="_blank" rel="noreferrer">
+            {company}
+          </a>
+          <Link />
+        </div>
+        <div className="stack">
+          {stack.map((item, index) => {
+            return (
+              <div key={index} className="stack-item">
+                {item}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Home = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -61,7 +99,9 @@ const Home = () => {
     <div className="main-home">
       <Nav />
       <div>
-        <p className="hi">{"Hi, My name is"}</p>
+        <p className="hi" style={{ fontWeight: "lighter" }}>
+          {"Hi, My name is"}
+        </p>
         <p className="intro-main-home">{"Agastya Rajawat"} </p>
         <div className="intro-sub-home home-name">
           <span className="intro-sub-home-child">{displayedText}</span>
@@ -147,23 +187,20 @@ const Home = () => {
           </button>
         </div>
         <p style={{ marginTop: 20, marginBottom: 20, fontSize: 24 }}>
-          Education & Work History
+          Work History
         </p>
         <div className="timeline">
           {TIMELINE_DATA.map((item, index) => {
             return (
-              <div key={index} className="timeline-card">
-                <div className="dot" />
-                <div className="timeline-data">
-                  <div className="timeline-data-child">
-                    <p className="timeline-title">{item.title}</p>
-                    <p className="timeline-desc">{item.desc}</p>
-                  </div>
-                  <p className="timeline-dates">
-                    {item.start_date} - {item.end_date}
-                  </p>
-                </div>
-              </div>
+              <TimelineCard
+                key={index}
+                title={item.title}
+                company={item.company}
+                start_date={item.start_date}
+                end_date={item.end_date}
+                stack={item.stack}
+                link={item.link}
+              />
             );
           })}
         </div>

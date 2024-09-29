@@ -13,16 +13,28 @@
 }
 
 .nav-link {
+  position: relative;
   text-decoration: none;
   color: #fff;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
-  padding-left: 20px;
+  padding: 5px 10px;
 }
 
-.nav-link:hover {
-  color: #ffb84c;
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 500ms ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 @media screen and (max-width: 639px) {

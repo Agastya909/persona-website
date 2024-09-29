@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Nav from "../../component/Nav";
 import "./project.css";
-
+import Link from "../../component/Link";
 const ITEMS = [
   {
     id: 0,
@@ -37,27 +37,26 @@ const ITEMS = [
   },
 ];
 
-const Card = ({ item }) => {
+const TechStack = ({ title, description, link, stack }) => {
   return (
-    <a
-      href={item.link}
-      style={{ textDecoration: "none", color: "#fff" }}
-      target="_blank"
-    >
-      <div className="project-card">
-        <div className="project-info">
-          <p className="project-name">{item.title}</p>
-          <p className="project-desc">{item.description}</p>
-          <div className="tech-stack">
-            {item.techStack.map((tech, index) => (
-              <span key={index} className="tech-stack-name">
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
+    <div className="project-card">
+      <div className="project-title">
+        <a href={link} target="_blank" rel="noreferrer">
+          <div className="project-name">{title}</div>
+          <Link />
+        </a>
       </div>
-    </a>
+      <div className="project-desc">{description}</div>
+      <div className="tech-stack">
+        {stack.map((item, index) => {
+          return (
+            <div key={index} className="tech-stack-name">
+              {item}
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
@@ -67,7 +66,13 @@ const Project = () => {
       <Nav />
       <p className="heading-project">Projects</p>
       {ITEMS.map((item, index) => (
-        <Card item={item} key={index} />
+        <TechStack
+          title={item.title}
+          description={item.description}
+          link={item.link}
+          stack={item.techStack}
+          key={index}
+        />
       ))}
     </div>
   );
