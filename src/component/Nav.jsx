@@ -11,7 +11,7 @@ const Nav = () => {
       </a>
       <div>
         <a href="/projects" className="nav-link">
-          My Works
+          Projects
         </a>
         <a href="/skills" className="nav-link">
           Skills

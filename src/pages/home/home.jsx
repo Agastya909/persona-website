@@ -100,7 +100,7 @@ const Home = () => {
       <Nav />
       <div>
         <p className="hi" style={{ fontWeight: "lighter" }}>
-          {"Hi, My name is"}
+          {"Hi, I'm"}
         </p>
         <p className="intro-main-home">{"Agastya Rajawat"} </p>
         <div className="intro-sub-home home-name">
