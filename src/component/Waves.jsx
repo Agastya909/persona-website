@@ -13,8 +13,8 @@ const Waves = () => {
       >
         <defs>
           <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="50%">
-            <stop offset="5%" stopColor="#121212"></stop>
-            <stop offset="95%" stopColor="#121212"></stop>
+            <stop offset="5%" stopColor="#212121"></stop>
+            <stop offset="95%" stopColor="#212121"></stop>
           </linearGradient>
         </defs>
         <path
