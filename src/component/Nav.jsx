@@ -16,9 +16,9 @@ const Nav = () => {
         <a href="/skills" className="nav-link">
           Skills
         </a>
-        <a href="/blogs" className="nav-link">
+        {/* <a href="/blogs" className="nav-link">
           Blogs
-        </a>
+        </a> */}
       </div>
     </div>
   );
