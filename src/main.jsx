@@ -7,7 +7,7 @@ import Project from "./pages/project/Project.jsx";
 import Skills from "./pages/skills/Skills.jsx";
 import Blogs from "./pages/blogs/Blogs.jsx";
 import Waves from "./component/Waves.jsx";
-
+import "./component/font.css";
 const Router = createBrowserRouter([
   {
     path: "/",
