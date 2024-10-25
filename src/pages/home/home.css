@@ -163,7 +163,7 @@
 @media screen and (max-width: 645px) {
   .main-home {
     max-width: 645px;
-    margin: 10px;
+    margin: 0 10px;
     color: #fff;
   }
   .timeline-card {
@@ -176,10 +176,6 @@
 }
 
 @media screen and (max-width: 480px) {
-  .hi {
-    margin-top: 50px;
-  }
-
   .intro-main-home {
     font-size: 30px;
   }

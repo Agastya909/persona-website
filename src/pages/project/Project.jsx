@@ -7,7 +7,7 @@ const ITEMS = [
   {
     title: "Personal Website",
     description:
-      "React based personal website. Feel free to use it directly or customize it. A star would be appreciated if you like it.",
+      "Personal website written in react. Feel free to use it directly or customize it. A star would be appreciated if you like it.",
     link: "https://github.com/Agastya909/personal-website",
     techStack: ["Javascript", "React"],
     is_pinned: true,
