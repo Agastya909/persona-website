@@ -8,6 +8,7 @@ import Skills from "./pages/skills/Skills.jsx";
 import Blogs from "./pages/blogs/Blogs.jsx";
 import Waves from "./component/Waves.jsx";
 import "./component/font.css";
+import NotFound from "./pages/not_found/not_found.jsx";
 const Router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const Router = createBrowserRouter([
   {
     path: "/blogs",
     element: <Blogs />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 
