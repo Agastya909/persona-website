@@ -11,7 +11,9 @@ const TIMELINE_DATA = [
     start_date: "JUNE 2024",
     end_date: "Present",
     link: "https://shurutech.com/",
-    stack: ["Python", "Django", "Postgres", "AWS"],
+    stack: ["Python", "Django", "Postgres", "AWS", "Airflow"],
+    description:
+      "Currently working with django and airflow on a B2B product for credit score calculation which will be used by various financial institutions.",
   },
   {
     title: "Software Engineer",
@@ -19,7 +21,9 @@ const TIMELINE_DATA = [
     start_date: "FEB 2023",
     end_date: "MAY 2024",
     link: "https://www.pickmywork.com/",
-    stack: ["React Native", "ReactJS", "Node.js", "MySQL", "AWS"],
+    stack: ["React Native", "ReactJS", "Node.js", "ExpressJS", "MySQL", "AWS"],
+    description:
+      "Created mobile app componenets such as story viewer, side nav bar, etc. Worked FCM for push notifications from scratch. Bumped up node for app from v14 to v18.",
   },
   {
     title: "Software Engineer Intern",
@@ -27,7 +31,9 @@ const TIMELINE_DATA = [
     start_date: "JULY 2022",
     end_date: "OCT 2022",
     link: "https://www.pickmywork.com/",
-    stack: ["React Native", "ReactJS", "Node.js", "MySQL", "AWS"],
+    stack: ["Node.js", "ExpressJS", "MySQL", "Redis"],
+    description:
+      "Worked with redis on API caching and performance optimization.",
   },
 ];
 const words = ["Backend Developer", "Mobile Developer", "Frontend Developer"];
@@ -39,6 +45,7 @@ const TimelineCard = ({
   end_date,
   link,
   stack,
+  description,
 }) => {
   return (
     <div className="timeline-card">
@@ -54,6 +61,16 @@ const TimelineCard = ({
             {company}
           </a>
           <Link />
+        </div>
+        <div
+          style={{
+            fontSize: "14px",
+            color: "#ababab",
+            fontWeight: "400",
+            margin: "5px 0",
+          }}
+        >
+          {description}
         </div>
         <div className="stack">
           {stack.map((item, index) => {
@@ -114,6 +131,16 @@ const Home = () => {
           {"Hi, I'm"}
         </p>
         <p className="intro-main-home">Agastya Rajawat</p>
+        <div className="location">
+          <img
+            src="/location.png"
+            alt="location"
+            height={20}
+            width={20}
+            style={{ filter: "invert(0.5)", marginRight: "5px" }}
+          />
+          Jaipur
+        </div>
         <div className="intro-sub-home home-name">
           <span className="intro-sub-home-child">{displayedText}</span>
           <span className="cursor">|</span>
@@ -121,8 +148,7 @@ const Home = () => {
         <p className="intro-desc-home">
           I like to code! <br /> With {totalExp || "over 1.5"} years of
           experience, I&#39;ve been working with JavaScript, TypeScript, Golang
-          and Python, building web servers, developing mobile apps using React
-          Native, and creating sleek, responsive websites.
+          and Python, building web servers, mobile apps, and websites.
         </p>
         <div className="btn-group">
           <button
@@ -212,6 +238,7 @@ const Home = () => {
                 end_date={item.end_date}
                 stack={item.stack}
                 link={item.link}
+                description={item.description}
               />
             );
           })}

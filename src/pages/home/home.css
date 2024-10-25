@@ -35,6 +35,15 @@
   font-size: 40px;
 }
 
+.location {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ababab;
+}
+
+
 .intro-sub-home {
   /* color: #aaaaaa; */
   font-size: 32px;
