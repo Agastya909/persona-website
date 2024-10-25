@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import Link from "../../component/Link";
 import Nav from "../../component/Nav";
+import Spacer from "../../component/Spacer";
 import "./home.css";
 import { useState, useEffect } from "react";
 const TIMELINE_DATA = [
@@ -107,6 +108,7 @@ const Home = () => {
   return (
     <div className="main-home">
       <Nav />
+      <Spacer />
       <div>
         <p className="hi" style={{ fontWeight: "lighter" }}>
           {"Hi, I'm"}
@@ -117,10 +119,10 @@ const Home = () => {
           <span className="cursor">|</span>
         </div>
         <p className="intro-desc-home">
-          I like to code! <br /> With {totalExp || "over 1.5"} years of experience, I&#39;ve
-          been working with JavaScript, TypeScript, Golang and Python, building
-          web servers, developing mobile apps using React Native, and creating
-          sleek, responsive websites.
+          I like to code! <br /> With {totalExp || "over 1.5"} years of
+          experience, I&#39;ve been working with JavaScript, TypeScript, Golang
+          and Python, building web servers, developing mobile apps using React
+          Native, and creating sleek, responsive websites.
         </p>
         <div className="btn-group">
           <button

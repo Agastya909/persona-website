@@ -2,6 +2,7 @@
 import Nav from "../../component/Nav";
 import "./project.css";
 import Link from "../../component/Link";
+import Spacer from "../../component/Spacer";
 const ITEMS = [
   {
     title: "Personal Website",
@@ -37,7 +38,7 @@ const ITEMS = [
   {
     title: "Short format video streaming app",
     description:
-      "A Mobile video streaming application. Mobile version of the above project.",
+      "Video streaming application for mobile to view short format videos.",
     link: "https://github.com/Agastya909/natflux-android",
     techStack: ["Typescript", "React Native", "Redux"],
     is_pinned: false,
@@ -71,7 +72,7 @@ const Project = () => {
   return (
     <div className="main-project">
       <Nav />
-      <p className="heading-project">Projects</p>
+      <Spacer />
       {ITEMS.map((item, index) => (
         <TechStack
           title={item.title}

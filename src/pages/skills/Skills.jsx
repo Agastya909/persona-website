@@ -1,5 +1,6 @@
 import "./skills.css";
 import Nav from "../../component/Nav";
+import Spacer from "../../component/Spacer";
 
 const ImageItem = (data) => {
   return (
@@ -20,6 +21,7 @@ const Skills = () => {
   return (
     <div>
       <Nav />
+      <Spacer />
       <div className="main">
         <p className="title">Server</p>
         <div className="icons">

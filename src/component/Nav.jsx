@@ -1,25 +1,31 @@
 import "./nav.css";
+import { useLocation } from "react-router-dom";
 const Nav = () => {
+  const location = useLocation();
   return (
     <div className="nav">
       <a
         href="/"
-        className="heading-nav"
-        style={{ textDecoration: "none", color: "white" }}
+        className={`nav-link${location.pathname === "/" ? "-active" : ""}`}
       >
-        ar
+        Home
       </a>
-      <div>
-        <a href="/projects" className="nav-link">
-          Projects
-        </a>
-        <a href="/skills" className="nav-link">
-          Skills
-        </a>
-        {/* <a href="/blogs" className="nav-link">
-          Blogs
-        </a> */}
-      </div>
+      <a
+        href="/projects"
+        className={`nav-link${
+          location.pathname === "/projects" ? "-active" : ""
+        }`}
+      >
+        Projects
+      </a>
+      <a
+        href="/skills"
+        className={`nav-link${
+          location.pathname === "/skills" ? "-active" : ""
+        }`}
+      >
+        Skills
+      </a>
     </div>
   );
 };

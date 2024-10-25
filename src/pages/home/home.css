@@ -5,7 +5,6 @@
 }
 
 .hi {
-  margin-top: 35px;
   color: #aaaaaa;
 }
 
@@ -44,7 +43,7 @@
 .intro-desc-home {
   color: #ddd;
   margin: 0 0 10px 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .btn-group {
@@ -58,7 +57,8 @@
   padding: 5px 15px;
   margin-right: 10px;
   color: #fff;
-  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 
 .social-btn:hover {
@@ -89,6 +89,7 @@
   padding: 15px 25px;
   margin-bottom: 10px;
   border-radius: 10px;
+  box-shadow: 0 0 1px 0 #ffffff4d;
 }
 
 .timeline-card:hover {
@@ -100,7 +101,8 @@
 .dates,
 .job-profile,
 .company {
-  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 
 .dates-div {
@@ -136,6 +138,8 @@
   font-style: italic;
   font-size: 14px;
   margin-right: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
 .stack {
@@ -150,14 +154,15 @@
   padding: 5px 15px;
   margin-right: 8px;
   color: #fff;
-  font-weight: 100;
   font-size: 12px;
   margin-top: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 645px) {
   .main-home {
-    max-width: 480px;
+    max-width: 645px;
     margin: 10px;
     color: #fff;
   }

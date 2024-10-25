@@ -1,36 +1,51 @@
-.heading-nav {
-  font-family: "Abril Fatface", serif;
-  font-weight: 400;
-  font-size: 48px;
-  margin-top: 20px;
-}
-
 .nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: baseline;
+  max-width: 640px;
+  margin: 25px auto;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  backdrop-filter: blur(100px);
+  background-color: #30303080;
+  border-radius: 200px;
 }
 
 .nav-link {
   position: relative;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
-  padding: 5px 10px;
+  padding: 5px 20px;
+  margin: 5px;
 }
 
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: #fff;
-  transition: width 500ms ease-in-out;
+.nav-link-active {
+  position: relative;
+  text-decoration: none;
+  color: #0b192c;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  padding: 5px 20px;
+  margin: 5px;
+  background-color: #f2e5bf;
+  backdrop-filter: blur(45px);
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: #f2e5bf50;
+  backdrop-filter: blur(45px);
+  border-radius: 100px;
+  transition: background-color 200ms ease-in-out;
 }
 
 .nav-link:hover::after {
@@ -39,14 +54,21 @@
 
 @media screen and (max-width: 639px) {
   .nav {
-    margin: 10px;
+    margin: 10px auto;
   }
 }
 
 @media screen and (max-width: 480px) {
   .nav {
     display: flex;
-    flex-direction: column;
     align-items: center;
+  }
+  .nav-link {
+    font-size: small;
+    padding: 5px 10px;
+  }
+  .nav-link-active {
+    font-size: small;
+    padding: 5px 10px;
   }
 }
