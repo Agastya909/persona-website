@@ -11,6 +11,7 @@ const ITEMS = [
     link: "https://github.com/Agastya909/personal-website",
     techStack: ["Javascript", "React"],
     is_pinned: true,
+    cover_img: "/portfolio.png",
   },
   {
     title: "Workout Tracker",
@@ -19,6 +20,7 @@ const ITEMS = [
     link: "https://github.com/Agastya909/workoutTracker",
     techStack: ["Typescript", "React Native", "Redux", "Firebase"],
     is_pinned: false,
+    cover_img: "/workoutracker.png",
   },
   {
     title: "Coffee Shop UI",
@@ -26,14 +28,16 @@ const ITEMS = [
     link: "https://github.com/Agastya909/coffeeHouse",
     techStack: ["Typescript", "React Native", "Redux"],
     is_pinned: false,
+    cover_img: "/coffeeui.png",
   },
   {
     title: "Video Streaming over web",
     description:
-      "A web app for video streaming with upload video functionality. Also supports searching for content.",
+      "A web app for video streaming with upload video functionality. Uses express, mysql for backend and system storage for storing videos.",
     link: "https://github.com/Agastya909/natflux-web",
     techStack: ["Typescript", "NextJS"],
     is_pinned: false,
+    cover_img: "/natfluxweb.png",
   },
   {
     title: "Short format video streaming app",
@@ -42,27 +46,31 @@ const ITEMS = [
     link: "https://github.com/Agastya909/natflux-android",
     techStack: ["Typescript", "React Native", "Redux"],
     is_pinned: false,
+    cover_img: "/natfluxmobile.png",
   },
 ];
 
-const TechStack = ({ title, description, link, stack }) => {
+const TechStack = ({ title, description, link, stack, cover_img }) => {
   return (
     <div className="project-card">
-      <div className="project-title">
-        <a href={link} target="_blank" rel="noreferrer">
-          <div className="project-name">{title}</div>
-          <Link />
-        </a>
-      </div>
-      <div className="project-desc">{description}</div>
-      <div className="tech-stack">
-        {stack.map((item, index) => {
-          return (
-            <div key={index} className="tech-stack-name">
-              {item}
-            </div>
-          );
-        })}
+      <img src={cover_img} alt={cover_img} className="cover" />
+      <div style={{ padding: "5px 10px" }}>
+        <div className="project-title">
+          <a href={link} target="_blank" rel="noreferrer">
+            <div className="project-name">{title}</div>
+            <Link />
+          </a>
+        </div>
+        <div className="project-desc">{description}</div>
+        <div className="tech-stack">
+          {stack.map((item, index) => {
+            return (
+              <div key={index} className="tech-stack-name">
+                {item}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -73,15 +81,18 @@ const Project = () => {
     <div className="main-project">
       <Nav />
       <Spacer />
-      {ITEMS.map((item, index) => (
-        <TechStack
-          title={item.title}
-          description={item.description}
-          link={item.link}
-          stack={item.techStack}
-          key={index}
-        />
-      ))}
+      <div className="project-grid">
+        {ITEMS.map((item, index) => (
+          <TechStack
+            title={item.title}
+            description={item.description}
+            link={item.link}
+            stack={item.techStack}
+            key={index}
+            cover_img={item.cover_img}
+          />
+        ))}
+      </div>
     </div>
   );
 };
