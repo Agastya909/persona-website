@@ -87,29 +87,10 @@ const TimelineCard = ({
 };
 
 const Home = () => {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("");
-  const [deleting, setDeleting] = useState(false);
-  const [speed] = useState(100);
   const [totalExp, setTotalExp] = useState(0);
   useEffect(() => {
-    const currentWord = words[currentWordIndex];
-    if (!deleting && displayedText === currentWord) {
-      setTimeout(() => setDeleting(true), 1000);
-    } else if (deleting && displayedText === "") {
-      setDeleting(false);
-      setCurrentWordIndex((prev) => (prev + 1) % words.length);
-    }
-    const timeout = setTimeout(() => {
-      if (!deleting) {
-        setDisplayedText(currentWord.slice(0, displayedText.length + 1));
-      } else {
-        setDisplayedText(currentWord.slice(0, displayedText.length - 1));
-      }
-    }, speed);
     calculateTotalExp();
-    return () => clearTimeout(timeout);
-  }, [displayedText, deleting, currentWordIndex, speed]);
+  }, []);
 
   const calculateTotalExp = () => {
     let total = 0;
@@ -142,8 +123,9 @@ const Home = () => {
           Jaipur
         </div>
         <div className="intro-sub-home home-name">
-          <span className="intro-sub-home-child">{displayedText}</span>
-          <span className="cursor">|</span>
+          <span className="intro-sub-home-child">
+            Backend, Frontend and Mobile Developer
+          </span>
         </div>
         <p className="intro-desc-home">
           I like to code! <br /> With {totalExp || "over 1.5"} years of
