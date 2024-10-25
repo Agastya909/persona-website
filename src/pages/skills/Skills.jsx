@@ -1,62 +1,52 @@
 import "./skills.css";
 import Nav from "../../component/Nav";
-const LANGUAGES = ["Javascript", "Typescript", "Golang", "Python"];
-const MOBILE = ["React Native", "Zustand"];
-const SERVER = ["Express", "go/http", "django"];
-const WEB = ["ReactJs", "NextJs", "Redux", "Tailwind", "Bootstrap", "HTML/CSS"];
-const DATABASE = ["MySQL", "PostgreSQL", "Redis", "MongoDB"];
-const TOOLS = ["Firebase", "Figma", "AWS", "Docker"];
 
-const RenderItem = ({ items }) => {
-  return items.map((item, index) => {
-    return (
-      <p key={index} className="item">
-        {item}
-      </p>
-    );
-  });
+const ImageItem = (data) => {
+  return (
+    <div className="tech-icon">
+      <img
+        src={data.src}
+        alt={data.alt}
+        height={36}
+        width={36}
+        style={{ filter: `invert(${data.invert ?? 0})` }}
+      />
+      <p style={{ color: "white" }}>{data.alt}</p>
+    </div>
+  );
 };
 
 const Skills = () => {
   return (
     <div>
       <Nav />
-      <div className="skill-content">
-        <div className="section">
-          <p className="title">Languages</p>
-          <div className="items">
-            <RenderItem items={LANGUAGES} />
-          </div>
+      <div className="main">
+        <p className="title">Server</p>
+        <div className="icons">
+          <ImageItem src="/typescript.png" alt="Typescript" />
+          <ImageItem src="/golang.png" alt="Golang" />
+          <ImageItem src="/python.png" alt="Python" />
+          <ImageItem src="/django.png" alt="Django" />
+          <ImageItem src="/express.png" alt="ExpressJS" invert={1} />
         </div>
-        <div className="section">
-          <p className="title">Mobile</p>
-          <div className="items">
-            <RenderItem items={MOBILE} />
-          </div>
+        <p className="title">Mobile and Web</p>
+        <div className="icons">
+          <ImageItem src="/react-native.png" alt="React" />
+          <ImageItem src="/html.png" alt="Html" />
+          <ImageItem src="/nextjs.png" alt="Nextjs" invert={0.3} />
+          <ImageItem src="/tailwind-css.png" alt="Tailwind" />
         </div>
-        <div className="section">
-          <p className="title">Server</p>
-          <div className="items">
-            <RenderItem items={SERVER} />
-          </div>
+        <p className="title">Database</p>
+        <div className="icons">
+          <ImageItem src="/postgres.png" alt="PostgreSQL" />
+          <ImageItem src="/mysql.png" alt="MySQL" />
+          <ImageItem src="/redis.png" alt="Redis" />
         </div>
-        <div className="section">
-          <p className="title">Web</p>
-          <div className="items">
-            <RenderItem items={WEB} />
-          </div>
-        </div>
-        <div className="section">
-          <p className="title">Database</p>
-          <div className="items">
-            <RenderItem items={DATABASE} />
-          </div>
-        </div>
-        <div className="section">
-          <p className="title">Tools & Others</p>
-          <div className="items">
-            <RenderItem items={TOOLS} />
-          </div>
+        <p className="title">Other</p>
+        <div className="icons">
+          <ImageItem src="/aws.png" alt="AWS" invert={0.1} />
+          <ImageItem src="/firebase.png" alt="Firebase" />
+          <ImageItem src="/docker.png" alt="Docker" />
         </div>
       </div>
     </div>
