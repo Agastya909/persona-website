@@ -5,7 +5,6 @@ import "./home.css";
 import { useState, useEffect } from "react";
 const TIMELINE_DATA = [
   {
-    id: 0,
     title: "Product Engineer",
     company: "Shurutech",
     start_date: "JUNE 2024",
@@ -14,7 +13,6 @@ const TIMELINE_DATA = [
     stack: ["Python", "Django", "Postgres", "AWS"],
   },
   {
-    id: 1,
     title: "Software Engineer",
     company: "PickMyWork",
     start_date: "FEB 2023",
@@ -23,7 +21,6 @@ const TIMELINE_DATA = [
     stack: ["React Native", "ReactJS", "Node.js", "MySQL", "AWS"],
   },
   {
-    id: 2,
     title: "Software Engineer Intern",
     company: "PickMyWork",
     start_date: "JULY 2022",
@@ -76,7 +73,7 @@ const Home = () => {
   const [displayedText, setDisplayedText] = useState("");
   const [deleting, setDeleting] = useState(false);
   const [speed] = useState(100);
-
+  const [totalExp, setTotalExp] = useState(0);
   useEffect(() => {
     const currentWord = words[currentWordIndex];
     if (!deleting && displayedText === currentWord) {
@@ -92,8 +89,20 @@ const Home = () => {
         setDisplayedText(currentWord.slice(0, displayedText.length - 1));
       }
     }, speed);
+    calculateTotalExp();
     return () => clearTimeout(timeout);
   }, [displayedText, deleting, currentWordIndex, speed]);
+
+  const calculateTotalExp = () => {
+    let total = 0;
+    TIMELINE_DATA.forEach((item) => {
+      const startDate = new Date(item.start_date);
+      const endDate =
+        item.end_date === "Present" ? new Date() : new Date(item.end_date);
+      total += (endDate - startDate) / (1000 * 60 * 60 * 24 * 365);
+    });
+    setTotalExp(total.toFixed(1));
+  };
 
   return (
     <div className="main-home">
@@ -102,15 +111,16 @@ const Home = () => {
         <p className="hi" style={{ fontWeight: "lighter" }}>
           {"Hi, I'm"}
         </p>
-        <p className="intro-main-home">{"Agastya Rajawat"} </p>
+        <p className="intro-main-home">Agastya Rajawat</p>
         <div className="intro-sub-home home-name">
           <span className="intro-sub-home-child">{displayedText}</span>
           <span className="cursor">|</span>
         </div>
         <p className="intro-desc-home">
-          I have over a year of experience working with JavaScript, TypeScript,
-          and Python, specializing in building web servers, developing mobile
-          applications using React Native, and creating responsive websites.
+          I like to code! <br /> With {totalExp || "over 1.5"} years of experience, I&#39;ve
+          been working with JavaScript, TypeScript, Golang and Python, building
+          web servers, developing mobile apps using React Native, and creating
+          sleek, responsive websites.
         </p>
         <div className="btn-group">
           <button

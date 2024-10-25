@@ -4,36 +4,43 @@ import "./project.css";
 import Link from "../../component/Link";
 const ITEMS = [
   {
-    id: 0,
+    title: "Personal Website",
+    description:
+      "React based personal website. Feel free to use it directly or customize it. A star would be appreciated if you like it.",
+    link: "https://github.com/Agastya909/personal-website",
+    techStack: ["Javascript", "React"],
+    is_pinned: true,
+  },
+  {
     title: "Workout Tracker",
     description:
       "A simple workout app built using React native to store workout logs.",
     link: "https://github.com/Agastya909/workoutTracker",
     techStack: ["Typescript", "React Native", "Redux", "Firebase"],
+    is_pinned: false,
   },
   {
-    id: 1,
     title: "Coffee Shop UI",
     description: "A UI only application for a shop selling drinks and coffee.",
     link: "https://github.com/Agastya909/coffeeHouse",
     techStack: ["Typescript", "React Native", "Redux"],
+    is_pinned: false,
   },
   {
-    id: 2,
     title: "Video Streaming over web",
     description:
       "A web app for video streaming with upload video functionality. Also supports searching for content.",
     link: "https://github.com/Agastya909/natflux-web",
     techStack: ["Typescript", "NextJS"],
-    language: "Typescript",
+    is_pinned: false,
   },
   {
-    id: 3,
     title: "Short format video streaming app",
-    description: `A Mobile video streaming application. Mobile version of the above project.`,
+    description:
+      "A Mobile video streaming application. Mobile version of the above project.",
     link: "https://github.com/Agastya909/natflux-android",
     techStack: ["Typescript", "React Native", "Redux"],
-    language: "Typescript",
+    is_pinned: false,
   },
 ];
 
