@@ -3,6 +3,7 @@ import SocialBtn from "./components/socialBtn";
 import WorkHistoryCard from "./components/workHistoryCard";
 import Chip from "./components/chip";
 import Divider from "./components/divider";
+import Btn from "./components/btn";
 
 const TIMELINE_DATA = [
   {
@@ -57,72 +58,70 @@ const SKILLS_SRC = [
 
 export default function Home() {
   return (
-    <div>
-      <div>
-        <p className="text-sm text-gray-400 font-medium">{"Hi, I'm"}</p>
-        <p className="text-4xl font-semibold mt-2">Agastya Rajawat</p>
-        <div className="flex flex-row place-items-baseline mt-4">
-          <Image
-            src={"/location.png"}
-            alt="location"
-            width={20}
-            height={20}
-            className="invert"
+    <div className="my-8">
+      <p className="text-sm text-gray-400 font-medium">{"Hi, I'm"}</p>
+      <p className="text-4xl font-semibold mt-2">Agastya Rajawat</p>
+      <div className="flex flex-row place-items-baseline mt-4">
+        <Image
+          src={"/location.png"}
+          alt="location"
+          width={20}
+          height={20}
+          className="invert"
+        />
+        <p className="text-gray-400 mx-2">Jaipur</p>
+      </div>
+      <p className="text-3xl my-2 animate-changeNameColor font-medium">
+        Backend, Frontend and Mobile Developer
+      </p>
+      <p className="my-2 text-gray-300 text-sm">
+        I have over 1.5 years of experience developing web apps, mobile apps and
+        backend services.
+      </p>
+      <Divider />
+      <div className="flex flex-row justify-between place-items-center my-1">
+        <p className="text-xl font-normal">Connect with me</p>
+        <div className="flex flex-row">
+          <SocialBtn
+            alt="Github"
+            href="https://github.com/agastya909"
+            src="/github.png"
+            invert={true}
           />
-          <p className="text-gray-400 mx-2">Jaipur</p>
+          <SocialBtn
+            alt="LinkedIn"
+            href="https://www.linkedin.com/in/agastya-rajawat/"
+            src="/linkedin.png"
+          />
+          <SocialBtn
+            alt="Email"
+            href="mailto:agastyarajawat909@gmail.com"
+            src="/email.png"
+            invert={true}
+          />
         </div>
-        <p className="text-3xl my-2 animate-changeNameColor font-medium">
-          Backend, Frontend and Mobile Developer
-        </p>
-        {/* <p className="my-2 text-gray-400 text-sm">
-          I like to code! <br /> With over 1.5 years of experience, I&#39;ve
-          been working with JavaScript, TypeScript, Golang and Python, building
-          web servers, mobile apps, and websites.
-        </p> */}
-        <Divider />
-        <div className="flex flex-row justify-between place-items-center my-1">
-          <p className="text-xl font-normal">Connect with me</p>
-          <div className="flex flex-row">
-            <SocialBtn
-              alt="Github"
-              href="https://github.com/agastya909"
-              src="/github.png"
-              invert={true}
+      </div>
+      <Divider />
+      <p className="text-xl font-medium my-2">What I work with</p>
+      <div className="flex flex-row flex-wrap mb-2 justify-center">
+        {SKILLS_SRC.map((src, index) => {
+          return (
+            <Chip
+              key={index}
+              src={src.src}
+              name={src.name}
+              invert={src.invert}
             />
-            <SocialBtn
-              alt="LinkedIn"
-              href="https://www.linkedin.com/in/agastya-rajawat/"
-              src="/linkedin.png"
-            />
-            <SocialBtn
-              alt="Email"
-              href="mailto:agastyarajawat909@gmail.com"
-              src="/email.png"
-              invert={true}
-            />
-          </div>
-        </div>
-        <Divider />
-        <p className="text-xl font-medium my-2">What I work with</p>
-        <div className="flex flex-row flex-wrap mb-2 justify-center">
-          {SKILLS_SRC.map((src, index) => {
-            return (
-              <Chip
-                key={index}
-                src={src.src}
-                name={src.name}
-                invert={src.invert}
-              />
-            );
-          })}
-        </div>
-        <Divider />
-        <p className="text-xl font-medium my-2">Work History</p>
-        <div>
-          {TIMELINE_DATA.map((data, index) => {
-            return <WorkHistoryCard key={index} {...data} />;
-          })}
-        </div>
+          );
+        })}
+      </div>
+      <Btn href="/projects" text="Have a look at my projects →" />
+      <Divider />
+      <p className="text-xl font-medium my-2">Work History</p>
+      <div>
+        {TIMELINE_DATA.map((data, index) => {
+          return <WorkHistoryCard key={index} {...data} />;
+        })}
       </div>
     </div>
   );
