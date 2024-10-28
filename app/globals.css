@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #101010;
+  --foreground: #ffffff;
+  --nav-background: #6b6b6b2e;
+  --nav-item: #f2e5bf;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Poppins, Helvetica, sans-serif;
+  max-width: 640px;
+  margin: 0 auto;
+}
