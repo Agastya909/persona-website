@@ -16,7 +16,7 @@ export default function WorkHistoryCard({
   description: string;
 }) {
   return (
-    <div className="flex flex-row my-4 rounded-lg py-4 px-2 shadow-[0_0_1px_0_#ffffff4d]">
+    <div className="flex flex-row my-4 rounded-lg py-4 px-2 shadow-[0_0_1px_0_#ffffff4d] zero:max-pc:flex-col">
       <p className="flex flex-row flex-1 text-gray-400 text-sm ml-2">
         {start_date} — {end_date}
       </p>

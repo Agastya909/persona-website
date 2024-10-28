@@ -58,7 +58,7 @@ const SKILLS_SRC = [
 
 export default function Home() {
   return (
-    <div className="my-8">
+    <div className="my-8 zero:max-pc:my-4 zero:max-pc:mx-2">
       <p className="text-sm text-gray-400 font-medium">{"Hi, I'm"}</p>
       <p className="text-4xl font-semibold mt-2">Agastya Rajawat</p>
       <div className="flex flex-row place-items-baseline mt-4">
@@ -79,9 +79,9 @@ export default function Home() {
         backend services.
       </p>
       <Divider />
-      <div className="flex flex-row justify-between place-items-center my-1">
+      <div className="flex flex-row justify-between place-items-center my-1 zero:max-tablet:flex-col">
         <p className="text-xl font-normal">Connect with me</p>
-        <div className="flex flex-row">
+        <div className="flex flex-row zero:max-mobile:flex-col">
           <SocialBtn
             alt="Github"
             href="https://github.com/agastya909"
