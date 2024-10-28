@@ -96,10 +96,10 @@ function ProjectCard({
 
 export default function Projects() {
   return (
-    <div className="my-8">
+    <div className="my-8 zero:max-pc:mx-2">
       <Btn href="/" text="← Go to Home" />
       <p className="text-xl my-4 font-medium">Personal projects</p>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 zero:max-tablet:grid-cols-1">
         {ITEMS.map((item, index) => (
           <ProjectCard
             key={index}
