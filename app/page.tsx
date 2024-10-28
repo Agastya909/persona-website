@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <div className="my-8 zero:max-pc:my-4 zero:max-pc:mx-2">
       <p className="text-sm text-gray-400 font-medium">{"Hi, I'm"}</p>
-      <p className="text-4xl font-semibold mt-2">Agastya Rajawat</p>
+      <p className="text-6xl font-black mt-2 font-dmtext">Agastya Rajawat</p>
       <div className="flex flex-row place-items-baseline mt-4">
         <Image
           src={"/location.png"}

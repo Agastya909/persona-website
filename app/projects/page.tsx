@@ -7,7 +7,7 @@ const ITEMS = [
     description:
       "Personal website written in react. Feel free to use it directly or customize it. A star would be appreciated if you like it.",
     link: "https://github.com/Agastya909/personal-website",
-    techStack: ["Javascript", "React"],
+    techStack: ["Typescript", "NextJS", "TailwindCSS"],
     is_pinned: true,
     cover_img: "/portfolio.png",
   },
@@ -33,7 +33,7 @@ const ITEMS = [
     description:
       "A web app for video streaming with upload video functionality. Uses express, mysql for backend and system storage for storing videos.",
     link: "https://github.com/Agastya909/natflux-web",
-    techStack: ["Typescript", "NextJS"],
+    techStack: ["Typescript", "NextJS", "Express", "MySQL"],
     is_pinned: false,
     cover_img: "/natfluxweb.png",
   },
@@ -81,7 +81,7 @@ function ProjectCard({
           {tech_stack.map((tech, index) => {
             return (
               <p
-                className="text-sm text-neutral-200 py-1 px-2 w-fit mr-2 my-1  place-items-center rounded-full bg-[#303030]"
+                className="text-neutral-200 w-fit mr-2 my-1 place-items-center rounded-full bg-[#303030] py-1 px-3 text-xs font-normal"
                 key={index}
               >
                 {tech}
