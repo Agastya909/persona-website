@@ -32,7 +32,7 @@ export default function WorkHistoryCard({
             return (
               <p
                 key={index}
-                className="py-1 px-4 bg-neutral-800 mr-2 rounded-full text-sm my-1 font-thin"
+                className="py-1 px-3 bg-neutral-800 mr-2 rounded-full text-xs my-1 font-normal"
               >
                 {item}
               </p>

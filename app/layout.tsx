@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
   style: "normal",
@@ -22,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body className={poppins.className}>{children}</body>
     </html>
   );
 }
