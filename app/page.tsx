@@ -60,7 +60,9 @@ export default function Home() {
   return (
     <div className="my-8 zero:max-pc:my-4 zero:max-pc:mx-2">
       <p className="text-sm text-gray-400 font-medium">{"Hi, I'm"}</p>
-      <p className="text-6xl font-black mt-2 font-dmtext zero:max-tablet:text-4xl">Agastya Rajawat</p>
+      <p className="text-5xl font-medium mt-2 font-lora zero:max-tablet:text-4xl">
+        Agastya Rajawat
+      </p>
       <div className="flex flex-row place-items-baseline mt-4">
         <Image
           src={"/location.png"}
@@ -71,7 +73,7 @@ export default function Home() {
         />
         <p className="text-gray-400 mx-2">Jaipur</p>
       </div>
-      <p className="text-3xl my-2 animate-changeNameColor font-medium zero:max-tablet:text-2xl">
+      <p className="text-3xl my-2 animate-changeNameColor font-medium zero:max-tablet:text-xl">
         Backend, Frontend and Mobile Developer
       </p>
       <p className="my-2 text-gray-300 text-sm">
@@ -79,8 +81,10 @@ export default function Home() {
         backend services.
       </p>
       <Divider />
-      <div className="flex flex-row justify-between place-items-center my-1 zero:max-tablet:flex-col">
-        <p className="text-xl font-normal">Connect with me</p>
+      <div className="flex flex-row justify-between place-items-center zero:max-tablet:flex-col my-2">
+        <p className="text-xl font-normal zero:max-tablet:text-lg">
+          Connect with me
+        </p>
         <div className="flex flex-row zero:max-mobile:flex-col">
           <SocialBtn
             alt="Github"

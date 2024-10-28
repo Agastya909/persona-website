@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from "next";
-import { Poppins, DM_Serif_Text } from "next/font/google";
+import { Poppins, Lora } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -10,8 +10,8 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-const dmText = DM_Serif_Text({
-  weight: "400",
+const lora = Lora({
+  weight: ["400", "500", "600", "700"],
   style: "normal",
   display: "swap",
   subsets: ["latin"],

@@ -8,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      dmtext: ["DM Serif Text", "serif"],
+      lora: ["Lora", "Sans-serif"],
     },
     screens: {
       pc: "640px",
