@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from "next";
-import { Poppins, Lora } from "next/font/google";
+import { Poppins, Lora, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -11,6 +11,13 @@ const poppins = Poppins({
 });
 
 const lora = Lora({
+  weight: ["400", "500", "600", "700"],
+  style: "normal",
+  display: "swap",
+  subsets: ["latin"],
+});
+
+const playfair_display = Playfair_Display({
   weight: ["400", "500", "600", "700"],
   style: "normal",
   display: "swap",

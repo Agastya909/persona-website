@@ -5,7 +5,7 @@ export default function WorkHistoryCard({
   start_date,
   link,
   stack,
-  description,
+  work: work,
 }: {
   start_date: string;
   end_date: string;
@@ -13,7 +13,7 @@ export default function WorkHistoryCard({
   company: string;
   link: string;
   stack: string[];
-  description: string;
+  work: string[];
 }) {
   return (
     <div className="flex flex-row my-4 rounded-lg py-4 px-2 shadow-[0_0_1px_0_#ffffff4d] zero:max-pc:flex-col">
@@ -25,8 +25,13 @@ export default function WorkHistoryCard({
         <a href={link} className="text-sm font-thin italic text-gray-400 my-1">
           {company}
         </a>
-
-        <p className="text-sm font-normal text-gray-400 mr-2">{description}</p>
+        {work.map((item, index) => {
+          return (
+            <p key={index} className="text-sm font-normal text-gray-400 mr-2 my-1">
+              • {item}
+            </p>
+          );
+        })}
         <div className="flex flex-row flex-wrap">
           {stack.map((item, index) => {
             return (

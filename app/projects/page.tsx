@@ -1,5 +1,5 @@
-import Btn from "../components/btn";
 import Image from "next/image";
+import Nav from "../components/nav";
 
 const ITEMS = [
   {
@@ -96,9 +96,8 @@ function ProjectCard({
 
 export default function Projects() {
   return (
-    <div className="my-8 zero:max-pc:mx-2">
-      <Btn href="/" text="← Go to Home" />
-      <p className="text-xl my-4 font-medium">Personal projects</p>
+    <div className="my-0 zero:max-pc:my-4 zero:max-pc:mx-2">
+      <Nav />
       <div className="grid grid-cols-2 gap-4 zero:max-tablet:grid-cols-1">
         {ITEMS.map((item, index) => (
           <ProjectCard

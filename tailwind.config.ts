@@ -9,6 +9,8 @@ const config: Config = {
   theme: {
     fontFamily: {
       lora: ["Lora", "Sans-serif"],
+      playFair: ["Playfair Display", "Sans-serif"],
+      poppins: ["Poppins", "Sans-serif"],
     },
     screens: {
       pc: "640px",
