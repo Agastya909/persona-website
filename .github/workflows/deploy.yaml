@@ -1,4 +1,4 @@
-name: Deploy Next.js App
+name: Deploy - ${{ inputs.deployment_name }}
 
 on:
   workflow_dispatch:
@@ -7,11 +7,12 @@ on:
         description: "Commit hash to deploy"
         required: true
       deployment_name:
-        description: "Deployment name (for tracking)"
+        description: "Deployment name (used as workflow & container name)"
         required: true
 
 jobs:
   deploy:
+    name: Deploy ${{ inputs.deployment_name }}
     runs-on: ubuntu-latest
 
     steps:
@@ -43,10 +44,11 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_USER: ${{ secrets.SSH_USER }}
+          DEPLOYMENT_NAME: ${{ inputs.deployment_name }}
         run: |
           echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
 
-          ssh -i private_key -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << 'EOF'
+          ssh -i private_key -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST << EOF
             # Install Docker if not installed
             if ! command -v docker &> /dev/null; then
               sudo apt update -y
@@ -55,15 +57,22 @@ jobs:
               sudo systemctl enable docker
             fi
 
+            # Add user to Docker group to avoid permission issues
+            sudo usermod -aG docker \$USER
+            newgrp docker
+
+            # Ensure the Docker daemon is accessible
+            sudo chmod 666 /var/run/docker.sock
+
             # Load Docker image
-            docker load -i /home/ubuntu/portfolio-app.tar
+            sudo docker load -i /home/ubuntu/portfolio-app.tar
 
-            # Stop and remove any existing container
-            docker stop portfolio-container || true
-            docker rm portfolio-container || true
+            # Stop and remove any existing container with the same name
+            sudo docker stop $DEPLOYMENT_NAME || true
+            sudo docker rm $DEPLOYMENT_NAME || true
 
-            # Run new container
-            docker run -d --name portfolio-container -p 3000:3000 portfolio-app
+            # Run new container with the specified deployment name
+            sudo docker run -d --name $DEPLOYMENT_NAME -p 3000:3000 portfolio-app
           EOF
 
           rm -f private_key
