@@ -53,23 +53,28 @@ jobs:
               sudo systemctl enable docker
             fi
 
-            # Add user to Docker group (if needed)
+            # Fix Docker socket permissions
             sudo usermod -aG docker \$USER
             newgrp docker
-
-            # Fix Docker socket permissions
             sudo chmod 666 /var/run/docker.sock
 
             # Load the Docker image
             docker load -i /home/ubuntu/portfolio-app.tar
 
-            # Ensure previous deployment is stopped & removed safely
+            # Stop and Remove Any Running Container on Port 3000
+            RUNNING_CONTAINER_ID=\$(docker ps --filter "publish=3000" --format "{{.ID}}")
+            if [ ! -z "\$RUNNING_CONTAINER_ID" ]; then
+              docker stop \$RUNNING_CONTAINER_ID
+              docker rm \$RUNNING_CONTAINER_ID
+            fi
+
+            # Remove old container (if exists)
             if docker ps -a --format '{{.Names}}' | grep -w "portfolio-app"; then
               docker stop portfolio-app || true
               docker rm portfolio-app || true
             fi
 
-            # Run the new container
+            # Run the new container on port 3000
             docker run -d --name portfolio-app -p 3000:3000 portfolio-app:latest
           EOF
 
