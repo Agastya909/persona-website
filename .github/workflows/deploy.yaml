@@ -66,10 +66,10 @@ jobs:
             # Install dependencies (without devDependencies)
             npm install --omit=dev
 
-            # Install PM2 globally (with sudo to fix permission issues)
+            # Install PM2 globally
             sudo npm install -g pm2
 
-            # Ensure PM2 is available in the user's PATH
+            # Ensure PM2 is in PATH
             export PATH="$PATH:$(npm root -g)"
 
             # Stop any running instance of the app
@@ -78,9 +78,8 @@ jobs:
             # Start the Next.js app with PM2
             pm2 start "npm run start" --name "portfolio"
 
-            # Save PM2 process list so it restarts on reboot
+            # Save PM2 process list
             pm2 save
-            pm2 startup
           EOF
 
           rm -f private_key

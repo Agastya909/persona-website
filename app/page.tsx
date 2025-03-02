@@ -12,9 +12,9 @@ const TIMELINE_DATA = [
     start_date: "JUNE 2024",
     end_date: "Present",
     link: "https://shurutech.com/",
-    stack: ["Python", "Django", "Postgres", "AWS", "Airflow"],
+    stack: ["Golang", "K8", "Python", "Django", "Postgres", "AWS", "Airflow"],
     description:
-      "Currently working with django and airflow on a B2B product for credit score calculation which will be used by various financial institutions.",
+      "Currently working with a payment based product using golang and K8 in a microservice architecture. Previously worked with django and airflow on a B2B product for credit score calculation which will be used by various financial institutions.",
   },
   {
     role: "Software Engineer",
