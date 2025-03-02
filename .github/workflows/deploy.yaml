@@ -1,4 +1,4 @@
-name: Deploy portfolio-app
+name: Deploy Next.js App
 
 on:
   workflow_dispatch:
@@ -6,13 +6,10 @@ on:
       commit_hash:
         description: "Commit hash to deploy"
         required: true
-      deployment_name:
-        description: "Deployment name (used as workflow & container name)"
-        required: true
 
 jobs:
   deploy:
-    name: Deploy ${{ inputs.deployment_name }}
+    name: Deploy Next.js App
     runs-on: ubuntu-latest
 
     steps:
@@ -23,11 +20,11 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t portfolio-app .
+          docker build -t portfolio-app:latest .
 
       - name: Save Docker Image as tar file
         run: |
-          docker save portfolio-app -o portfolio-app.tar
+          docker save portfolio-app:latest -o portfolio-app.tar
 
       - name: Transfer Docker Image to EC2
         env:
@@ -44,7 +41,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
           SSH_USER: ${{ secrets.SSH_USER }}
-          DEPLOYMENT_NAME: ${{ inputs.deployment_name }}
         run: |
           echo "$SSH_PRIVATE_KEY" > private_key && chmod 600 private_key
 
@@ -57,22 +53,24 @@ jobs:
               sudo systemctl enable docker
             fi
 
-            # Add user to Docker group to avoid permission issues
+            # Add user to Docker group (if needed)
             sudo usermod -aG docker \$USER
             newgrp docker
 
-            # Ensure the Docker daemon is accessible
+            # Fix Docker socket permissions
             sudo chmod 666 /var/run/docker.sock
 
-            # Load Docker image
-            sudo docker load -i /home/ubuntu/portfolio-app.tar
+            # Load the Docker image
+            docker load -i /home/ubuntu/portfolio-app.tar
 
-            # Stop and remove any existing container with the same name
-            sudo docker stop $DEPLOYMENT_NAME || true
-            sudo docker rm $DEPLOYMENT_NAME || true
+            # Ensure previous deployment is stopped & removed safely
+            if docker ps -a --format '{{.Names}}' | grep -w "portfolio-app"; then
+              docker stop portfolio-app || true
+              docker rm portfolio-app || true
+            fi
 
-            # Run new container with the specified deployment name
-            sudo docker run -d --name $DEPLOYMENT_NAME -p 3000:3000 portfolio-app
+            # Run the new container
+            docker run -d --name portfolio-app -p 3000:3000 portfolio-app:latest
           EOF
 
           rm -f private_key
